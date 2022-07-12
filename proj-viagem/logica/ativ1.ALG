@@ -1,11 +1,9 @@
 Algoritmo "semnome"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Nome do(a) aluno(a)
+// Professor   : Flavio Mota
+// Autor(a)    : Maori Amorim
 // Data atual  : 6/29/2022
 Var
-   // Seção de Declarações das variáveis
+   // SeÃ§Ã£o de DeclaraÃ§Ãµes das variÃ¡veis
    nome: vetor[1..2] de caracter
    email:vetor[1..2] de caracter
    local:vetor[1..2] de caracter
@@ -15,7 +13,7 @@ Var
    o:inteiro
    pesquisa:caractere
 Inicio
-   // Seção de Comandos, procedimento, funções, operadores, etc.
+   // SeÃ§Ã£o de Comandos, procedimento, funÃ§Ãµes, operadores, etc.
    //mantem o loop de perguntas
    escreval("tecle c para finalizar o programa")
    escreval("outra tecla pra continuar")
