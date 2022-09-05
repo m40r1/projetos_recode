@@ -14,9 +14,11 @@ public class addContato extends Contato {
     }
 
     public void Create(Scanner in) throws SQLException {
+
         String sql = "INSERT INTO contato (nome,email) VALUES (?,?)";
         PreparedStatement statement = status.prepareStatement(sql);
 
+        in.nextLine();
         System.out.println("nome do contato:");
         super.nome = in.nextLine();
         System.out.println("email do contato:");

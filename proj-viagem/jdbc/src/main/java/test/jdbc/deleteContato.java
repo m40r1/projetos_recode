@@ -1,4 +1,4 @@
-package test.jdbc;
+XFpackage test.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,11 +13,13 @@ public class deleteContato extends Contato {
 		this.status = conn;
 	}
 
-	public void Delete(int id) throws SQLException {
+	public void Delete(Scanner in) throws SQLException {
 		final String sql = "DELETE FROM contato where id = ?";
 
 		final PreparedStatement statement = status.prepareStatement(sql);
-		statement.setInt(1, id);
+		System.out.println("deletar id:");
+		this.id = in.nextInt();
+		statement.setInt(1, this.id);
 
 		final int rowsDeleted = statement.executeUpdate();
 		if (rowsDeleted > 0) {

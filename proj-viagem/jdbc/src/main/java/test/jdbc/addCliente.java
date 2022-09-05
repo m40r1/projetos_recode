@@ -13,16 +13,17 @@ public class addCliente extends Cliente {
         this.status = conn;
     }
 
+    // Criar um cliente sempre tornara ele ativo
     public void Create(Scanner in) throws SQLException {
-
         String sql = "INSERT INTO cliente (nome,senha,ativo) VALUES (?,?,?)";
         PreparedStatement statement = status.prepareStatement(sql);
 
+        in.nextLine();
         System.out.println("nome do cliente:");
         super.nome = in.nextLine();
         System.out.println("senha do cliente:");
         super.senha = in.nextLine();
-        super.ativo = 1;
+        super.ativo = true;
 
         statement.setString(1, this.nome);
         statement.setString(2, this.senha);

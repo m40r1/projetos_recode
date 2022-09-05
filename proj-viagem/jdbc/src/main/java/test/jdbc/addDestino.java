@@ -19,6 +19,7 @@ public class addDestino extends Destino {
         String sql = "INSERT INTO destino (nome,continente,pais,preco,desconto,preco_desconto,duracao) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement statement = status.prepareStatement(sql);
 
+        in.nextLine();
         System.out.println("Nome do destino:");
         super.nome = in.nextLine();
         System.out.println("continente de destino:");

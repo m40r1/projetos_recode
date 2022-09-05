@@ -13,11 +13,14 @@ public class deleteCliente extends Cliente {
         this.status = conn;
     }
 
-    public void Delete(int id) throws SQLException {
+    // deleta um usuario
+    public void Delete(Scanner in) throws SQLException {
         final String sql = "DELETE FROM cliente where id = ?";
 
         final PreparedStatement statement = status.prepareStatement(sql);
-        statement.setInt(1, id);
+        System.out.println("id que ira deletar");
+        this.id = in.nextInt();
+        statement.setInt(1, this.id);
 
         final int rowsDeleted = statement.executeUpdate();
         if (rowsDeleted > 0) {

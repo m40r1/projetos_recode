@@ -5,27 +5,31 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-
 public class updateCliente extends Cliente {
+
     private final Connection status;
 
-
+    // paassar para o Cliente
     public updateCliente(Connection conn) throws SQLException {
         super(conn);
         this.status = conn;
     }
 
-    public void Create(Scanner in, Boolean set_nome, Boolean set_senha, Boolean set_ativo,final int id) throws SQLException {
-
+    // Booleans para tipos de update
+    public void Update(Scanner in, Boolean set_nome, Boolean set_senha, Boolean set_ativo) throws SQLException {
+        // update nome
         if (set_nome == true) {
             String sql = "UPDATE cliente set nome = ? where id = ?";
             PreparedStatement statement = status.prepareStatement(sql);
 
+            in.nextLine();
             System.out.println("novo nome:");
             super.nome = in.nextLine();
+            System.out.println("para a id:");
+            this.id = in.nextInt();
 
             statement.setString(1, super.nome);
-            statement.setInt(2,id);
+            statement.setInt(2, this.id);
 
             int rowsInserted = statement.executeUpdate();
 
@@ -37,15 +41,19 @@ public class updateCliente extends Cliente {
                 System.out.println("nome alterado");
             }
         }
-
+        // update senha
         if (set_senha == true) {
             String sql = "UPDATE cliente set senha = ? where id = ?";
-            PreparedStatement statement = status.prepareStatement(sql1);
+            PreparedStatement statement = status.prepareStatement(sql);
 
+            in.nextLine();
             System.out.println("nova senha:");
             super.senha = in.nextLine();
+            System.out.println("para a id:");
+            this.id = in.nextInt();
 
-            statement.setString(2, sql);
+            statement.setString(1, sql);
+            statement.setInt(2, this.id);
 
             int rowsInserted = statement.executeUpdate();
 
@@ -53,15 +61,18 @@ public class updateCliente extends Cliente {
                 System.out.println("senha alterada");
             }
         }
-
+        // desativar usuario
         if (set_ativo == true) {
             String sql = "UPDATE cliente set ativo = ? where id = ?";
             PreparedStatement statement = status.prepareStatement(sql);
 
-            System.out.println("ativar = 1 ,desativar = 0");
+            System.out.println("ativar = true ,desativar = false");
             super.ativo = in.nextBoolean();
+            System.out.println("para a id:");
+            this.id = in.nextInt();
 
-            statement.setBoolean(3, super.ativo);
+            statement.setBoolean(1, super.ativo);
+            statement.setInt(2, this.id);
 
             int rowsInserted = statement.executeUpdate();
 

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Cliente {
+
     private final Connection status;
 
     public Cliente(Connection conn) throws SQLException {
@@ -50,13 +51,13 @@ public class Cliente {
         this.data_criado = data_criado;
     }
 
-    public bit ativo;
+    public Boolean ativo;
 
-    public bit getAtivo() {
+    public Boolean getAtivo() {
         return ativo;
     }
 
-    public void setAtivo(bit ativo) {
+    public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
     }
 

@@ -13,16 +13,20 @@ public class updateContato extends Contato {
         this.status = conn;
     }
 
-    public void Create(Scanner in, Boolean set_nome, Boolean set_email, final int id) {
+    //update nome ou email
+    public void Update(Scanner in, Boolean set_nome, Boolean set_email) throws SQLException {
         if (set_email == true) {
             String sql = "UPDATE contato set email = ? where id = ?";
             PreparedStatement statement = status.prepareStatement(sql);
 
+            in.nextLine();
             System.out.println("novo email:");
             super.email = in.nextLine();
+            System.out.println("para id");
+            this.id = in.nextInt();
 
             statement.setString(1, super.email);
-            statement.setInt(2, id);
+            statement.setInt(2, this.id);
 
             int rowsInserted = statement.executeUpdate();
 
@@ -33,11 +37,14 @@ public class updateContato extends Contato {
             String sql = "UPDATE contato set nome = ? where id = ?";
             PreparedStatement statement = status.prepareStatement(sql);
 
+            in.nextLine();
             System.out.println("novo nome:");
             super.nome = in.nextLine();
+            System.out.println("para id");
+            this.id = in.nextInt();
 
             statement.setString(1, super.nome);
-            statement.setInt(2, id);
+            statement.setInt(2, this.id);
 
             int rowsInserted = statement.executeUpdate();
 
