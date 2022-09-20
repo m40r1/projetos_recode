@@ -12,7 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import test.java_jsp_crud.dao.ClienteDao;
 import test.java_jsp_crud.model.Cliente;
 
-@WebServlet("/login")
+@WebServlet("/cliente/jsp
+")
 public class ClienteServlet extends HttpServlet {
 	private ClienteDao clienteDao;
 
@@ -48,7 +49,7 @@ public class ClienteServlet extends HttpServlet {
 				updateClienteAtivo(request, response);
 				break;
 			default:
-				listDestino(request, response);
+				listCliente(request, response);
 				break;
 			}
 		} catch (SQLException ex) {
@@ -60,7 +61,7 @@ public class ClienteServlet extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 
-	private void listDestino(HttpServletRequest request, HttpServletResponse response)
+	private void listCliente(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		final int id = Integer.parseInt(request.getParameter("id"));
 		java.util.List<Cliente> clientes = clienteDao.selectAllClientes();

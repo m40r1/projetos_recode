@@ -10,10 +10,9 @@
 					crossorigin="anonymous">
 			</head>
 
-			<body>
-
+			<body class="bg-black">
 				<header>
-					<nav class="navbar navbar-expand-sm navbar-dark bg-black">
+					<nav class=" navbar navbar-expand-sm navbar-dark bg-black">
 						<div class="container-fluid">
 							<a class="navbar-brand text-danger" href="#">Tantrum</a> <button
 								class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
@@ -44,6 +43,39 @@
 									<li class="nav-item">
 										<a class="nav-link" href="cliente-list.jsp">Clientes_java</a>
 									</li>
+									<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Destinos</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="destinos.html">Destinos</a>
+									<a class="dropdown-item" href="destino-form.jsp">Formulario
+										Destino</a> <!-- <div class="dropdown-divider"></div> -->
+									<a class="dropdown-item" href="destino-list.jsp">Listagem
+										destinos</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#"></a> <a class="dropdown-item"
+										href="cliente-list.jsp">list-clientes</a>
+									<div class="dropdown-divider"></div><a class="dropdown-item"
+										href="cliente-form.jsp">cadastro
+										cliente</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contatos</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#"></a> <a class="dropdown-item"
+										href="cliente-list.jsp">list-contatos</a>
+									<div class="dropdown-divider"></div><a class="dropdown-item"
+																				  href="cliente-form.jsp">cadastro
+										contato</a>
+								</div>
+							</li>
 								</ul>
 							</div>
 						</div>
@@ -51,7 +83,7 @@
 				</header>
 				<br>
 				<div class="container col-md-5">
-					<div class="card">
+					<div class="card bg-black text-danger">
 						<div class="card-body">
 							<c:if test="${cliente != null}">
 								<form action="update" method="post">
@@ -94,7 +126,7 @@
 								<label>Cliente ativo</label> <input type="text"
 									value="<c:out value='${cliente.ativo}' />" class="form-control" name="ativo">
 							</fieldset>
-							<button type="submit" class="btn btn-success">Salvar</button>
+							<button type="submit" class="btn btn-danger">Salvar</button>
 							</form>
 						</div>
 					</div>

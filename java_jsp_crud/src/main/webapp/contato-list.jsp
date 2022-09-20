@@ -36,6 +36,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="login.html">Login</a>
+
                                     </li>
                                     <li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -83,9 +84,8 @@
                         <h3 class="text-center">Clientes</h3>
                         <hr>
                         <div class="container text-left">
-
-                            <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Novo
-                                cliente</a>
+                            <a href="<%=request.getContextPath()%>/new" class="btn btn-danger">Novo
+                                contato</a>
                         </div>
                         <br>
                         <table class="table table-bordered">
@@ -93,39 +93,31 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
-                                    <th>Senha</th>
-                                    <th>Ativo</th>
+                                    <th>Email</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!--   for (Todo todo: todos) {  -->
-                                <c:forEach var="cliente" items="${listCliente}">
+                                <c:forEach var="contato" items="${listContato}">
 
                                     <tr>
                                         <td>
-                                            <c:out value="${cliente.id}" />
+                                            <c:out value="${contato.id}" />
                                         </td>
                                         <td>
-                                            <c:out value="${cliente.nome}" />
+                                            <c:out value="${contato.nome}" />
                                         </td>
                                         <td>
-                                            <c:out value="${cliente.email}" />
+                                            <c:out value="${contato.email}" />
                                         </td>
-                                        <td>
-                                            <c:out value="${cliente.senha}" />
-                                        </td>
-                                        <td>
-                                            <c:out value="${cliente.ativo}" />
-                                        </td>
-                                        <td><a href="edit?id=<c:out value='${cliente.id}' />">Editar</a>
+                                        <td><a href="edit?id=<c:out value='${contato.id}' />">Editar</a>
                                             &nbsp;&nbsp;&nbsp;&nbsp; <a
-                                                href="delete?id=<c:out value='${cliente.id}' />">Deletar</a>
+                                                href="delete?id=<c:out value='${contato.id}' />">Deletar</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                                 <!-- } -->
                             </tbody>
-
                         </table>
                     </div>
                 </div>

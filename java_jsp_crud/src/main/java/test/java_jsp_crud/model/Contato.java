@@ -1,16 +1,30 @@
-package test.jdbc;
-
-import java.sql.Connection;
-import java.sql.SQLException;
+package test.java_jsp_crud.model;
 
 public class Contato {
-    private final Connection status;
 
-    public Contato(Connection conn) throws SQLException {
-        this.status = conn;
+    protected int id;
+
+    public Contato() {
+        super();
     }
 
-    public int id;
+    public Contato(String nome, String email) {
+        super();
+        this.nome = nome;
+        this.email = email;
+    }
+
+    public Contato(int id, String nome, String email) {
+        super();
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+    }
+
+    public Contato(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
 
     public int getId() {
         return id;
@@ -20,7 +34,7 @@ public class Contato {
         this.id = id;
     }
 
-    public String nome;
+    protected String nome;
 
     public String getNome() {
         return nome;
@@ -30,7 +44,7 @@ public class Contato {
         this.nome = nome;
     }
 
-    public String email;
+    protected String email;
 
     public String getEmail() {
         return email;

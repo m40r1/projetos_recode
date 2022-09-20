@@ -72,7 +72,7 @@
 										contato</a>
 								</div>
 							</li>
-							<!-- TODO  dropdown inside jsps-->
+				</li>
 								</ul>
 							</div>
 						</div>
@@ -82,64 +82,37 @@
 				<div class="container col-md-5">
 					<div class="card bg-black text-danger">
 						<div class="card-body">
-							<c:if test="${destino != null}">
+							<c:if test="${contato != null}">
 								<form action="update" method="post">
 							</c:if>
-							<c:if test="${destino == null}">
+							<c:if test="${contato == null}">
 								<form action="insert" method="post">
 							</c:if>
 
 							<caption>
 								<h2>
-									<c:if test="${destino != null}">
-										Editar destino
+									<c:if test="${contato != null}">
+										Editar contato
 									</c:if>
-									<c:if test="${destino == null}">
-										Novo destino
+									<c:if test="${contato == null}">
+										Novo contato
 									</c:if>
 								</h2>
 
 							</caption>
 
-							<c:if test="${destino != null}">
-								<input type="hidden" name="id" value="<c:out value='${destino.id}' />" />
+							<c:if test="${contato != null}">
+								<input type="hidden" name="id" value="<c:out value='${contato.id}' />" />
 							</c:if>
 
 							<fieldset class="form-group">
-								<label>Nome destino</label> <input type="text" value="<c:out value='${destino.nome}' />"
+								<label>Nome contato</label> <input type="text" value="<c:out value='${contato.nome}' />"
 									class="form-control" name="nome" required="required">
 							</fieldset>
 
 							<fieldset class="form-group">
-								<label>Continente do destino</label> <input type="text"
-									value="<c:out value='${destino.continente}' />" class="form-control"
-									name="continente">
-							</fieldset>
-
-							<fieldset class="form-group">
-								<label>pais de destino/label> <input type="text"
-										value="<c:out value='${destino.pais}' />" class="form-control" name="pais">
-							</fieldset>
-
-							<fieldset class="form-group">
-								<label>preco da viagem</label> <input type="text"
-									value="<c:out value='${destino.preco}' />" class="form-control" name="preco">
-							</fieldset>
-
-							<fieldset class="form-group">
-								<label>desconto</label> <input type="text" value="<c:out value='${destino.desconto}' />"
-									class="form-control" name="desconto">
-							</fieldset>
-
-							<fieldset class="form-group">
-								<label>preco com desconto</label> <input type="text"
-									value="<c:out value='${destino.preco_desconto}' />" class="form-control"
-									name="preco_desconto">
-							</fieldset>
-
-							<fieldset class="form-group">
-								<label>duracao da viagem</label> <input type="text"
-									value="<c:out value='${destino.duracao}' />" class="form-control" name="duracao">
+								<label>Email do contato</label> <input type="text"
+									value="<c:out value='${contato.email}' />" class="form-control" name="email">
 							</fieldset>
 
 							<button type="submit" class="btn btn-danger">Salvar</button>

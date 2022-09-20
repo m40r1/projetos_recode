@@ -44,6 +44,39 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="cliente-list.jsp">Clientes_java</a>
                                     </li>
+                                    <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Destinos</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="destinos.html">Destinos</a>
+									<a class="dropdown-item" href="destino-form.jsp">Formulario
+										Destino</a> <!-- <div class="dropdown-divider"></div> -->
+									<a class="dropdown-item" href="destino-list.jsp">Listagem
+										destinos</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#"></a> <a class="dropdown-item"
+										href="cliente-list.jsp">list-clientes</a>
+									<div class="dropdown-divider"></div><a class="dropdown-item"
+										href="cliente-form.jsp">cadastro
+										cliente</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contatos</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#"></a> <a class="dropdown-item"
+										href="cliente-list.jsp">list-contatos</a>
+									<div class="dropdown-divider"></div><a class="dropdown-item"
+										                                          href="cliente-form.jsp">cadastro
+										contato</a>
+								</div>
+							</li>
                                 </ul>
                             </div>
                         </div>
@@ -54,7 +87,7 @@
                 <div class="row">
                     <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
-                    <div class="container">
+                    <div class="container bg-black text-danger">
                         <h3 class="text-center">Lista de destinos</h3>
                         <hr>
                         <div class="container text-left">
